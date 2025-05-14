@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Farming</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Precision Farming</h1>
+        
+        <!-- Status message for Firebase data loading -->
+        <div id="firebaseStatus" style="margin-bottom: 20px; font-style: italic; padding: 10px;">
+            Loading sensor data from Firebase...
+        </div>
+        
+        <div id="displayData" class="data-display">
+          
+        </div>
+        
+        <h2>Enter Soil and Weather Data</h2>
+        <form id="soilForm">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" step="any" required>
+        
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" id="humidity" step="any" required>
+        
+            <label for="ph">pH Level:</label>
+            <input type="number" id="ph" step="any" required>
+        
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="number" id="rainfall" step="any" required>
+        
+            <button type="submit">Get Crop Recommendation</button>
+        </form>
+        
+        <button id="viewDataBtn">View All Stored Data</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
